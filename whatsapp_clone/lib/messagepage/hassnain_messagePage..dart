@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:bubble/bubble.dart';
 
-class BabaMessagePage extends StatefulWidget {
-  const BabaMessagePage({Key? key}) : super(key: key);
+class HaasaninMessagePage extends StatefulWidget {
+  const HaasaninMessagePage({Key? key}) : super(key: key);
 
   @override
-  State<BabaMessagePage> createState() => _BabaMessagePageState();
+  State<HaasaninMessagePage> createState() => _HaasaninMessagePageState();
 }
 
-class _BabaMessagePageState extends State<BabaMessagePage> {
+class _HaasaninMessagePageState extends State<HaasaninMessagePage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

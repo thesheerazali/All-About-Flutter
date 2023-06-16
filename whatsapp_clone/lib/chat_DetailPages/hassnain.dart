@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+
+import '../messagepage/hassnain_messagePage..dart';
+
 class HassnainScreen extends StatefulWidget {
   const HassnainScreen({Key? key}) : super(key: key);
 
@@ -14,7 +17,7 @@ class _HassnainScreenState extends State<HassnainScreen> {
       appBar: AppBar(
         titleSpacing: 0.0,
         backgroundColor: const Color.fromARGB(255, 11, 107, 96),
-        title: Row(children: const [
+        title: const Row(children: [
           CircleAvatar(
             backgroundImage: AssetImage('assets/images/panda.jpeg'),
           ),
@@ -36,6 +39,39 @@ class _HassnainScreenState extends State<HassnainScreen> {
           ),
         ]),
       ),
+
+     body: Column(
+          children: [
+            const Expanded(child: HaasaninMessagePage()),
+            Container(
+              alignment: Alignment.bottomCenter,
+              padding: EdgeInsets.all(16.0),
+              child: Row(
+                children: [
+                  Flexible(
+                    child: TextFormField(
+                      maxLines: 5,
+                      minLines: 1,
+                      decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50),
+                          borderSide:
+                              const BorderSide(color: Colors.grey, width: 2.0),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50),
+                          borderSide:
+                              const BorderSide(color: Colors.grey, width: 2.0),
+                        ),
+                        hintText: 'Type a message',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        )
     );
   }
 }

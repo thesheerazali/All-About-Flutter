@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../messagepage/baba_messagePage.dart';
 
 class BabaScreen extends StatefulWidget {
@@ -45,7 +44,7 @@ class _BabaScreenState extends State<BabaScreen> {
         ),
         body: Column(
           children: [
-            const Expanded(child: MessagePage()),
+            const Expanded(child: BabaMessagePage()),
             Container(
               alignment: Alignment.bottomCenter,
               padding: EdgeInsets.all(16.0),
