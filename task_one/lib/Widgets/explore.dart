@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Explore {
-  static cameraExploreBell() {
+class Explore extends StatelessWidget {
+  const Explore({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

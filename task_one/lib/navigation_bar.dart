@@ -5,6 +5,8 @@ import 'package:task_one/pages/home_page.dart';
 import 'package:task_one/pages/notification_page.dart';
 import 'package:task_one/pages/profile_page.dart';
 
+import 'Widgets/coustom_navigation_bar.dart';
+
 class NavigationBarContainer extends StatefulWidget {
   const NavigationBarContainer({super.key});
 
@@ -13,9 +15,14 @@ class NavigationBarContainer extends StatefulWidget {
 }
 
 class _NavigationBarContainerState extends State<NavigationBarContainer> {
-  final int _selectedPageIndex = 0;
+   int selectedPageIndex = 0;
+  void iconTabed(int index) {
+    setState(() {
+      selectedPageIndex = index;
+    });
+  }
 
-  static const List<Widget> _appPages = [
+  static const List<Widget> appPages = [
     HomePage(),
     ChatPage(),
     AddPost(),
@@ -27,9 +34,10 @@ class _NavigationBarContainerState extends State<NavigationBarContainer> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: _appPages[_selectedPageIndex],
+        child: appPages[selectedPageIndex],
       ),
-      bottomNavigationBar: ConstumBottomNavigationBar(),
+      bottomNavigationBar: CoustomNavigationBard(
+          selectedPageIndex: selectedPageIndex, onTabFuntion: iconTabed),
     );
   }
 }
