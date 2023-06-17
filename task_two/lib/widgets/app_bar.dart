@@ -15,7 +15,7 @@ class TopBar extends StatelessWidget {
             height: 50.h,
             width: 50.w,
             decoration: BoxDecoration(
-              color: Colors.grey.shade200,
+              color: Colors.blue[50],
               borderRadius: BorderRadius.circular(32.sp),
             ),
             child: Icon(Icons.arrow_back, size: 35),
@@ -24,7 +24,7 @@ class TopBar extends StatelessWidget {
             height: 50.h,
             width: 50.w,
             decoration: BoxDecoration(
-              color: Colors.grey.shade200,
+              color: Colors.blue[50],
               borderRadius: BorderRadius.circular(32.sp),
             ),
             child: Icon(Icons.email, size: 30),
