@@ -155,9 +155,11 @@ class MainContainer extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(50.r),
                         topRight: Radius.circular(50.r))),
-                child: const Padding(
-                  padding: EdgeInsets.only(top: 10, right: 16, left: 16),
-                  child: MasonryCoustom(),
+                child: const InkWell(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 10, right: 16, left: 16),
+                    child: MasonryCoustom(),
+                  ),
                 ),
               ),
             ),
