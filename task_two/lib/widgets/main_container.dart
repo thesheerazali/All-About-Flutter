@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'buttons.dart';
 
@@ -154,9 +155,37 @@ class MainContainer extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(50.r),
                         topRight: Radius.circular(50.r))),
+                child: const Padding(
+                  padding: EdgeInsets.only(top: 10, right: 16, left: 16),
+                  child: MasonryCoustom(),
+                ),
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class MasonryCoustom extends StatelessWidget {
+  const MasonryCoustom({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return MasonryGridView.builder(
+      mainAxisSpacing: 10,
+      crossAxisSpacing: 10,
+      itemCount: 6,
+      gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2),
+      itemBuilder: (context, index) => ClipRRect(
+        borderRadius: BorderRadius.circular(15),
+        child: Image.asset(
+          "assets/images/pic${index + 1}.jfif",
+          fit: BoxFit.cover,
         ),
       ),
     );
