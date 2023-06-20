@@ -82,8 +82,8 @@ class _HomePageState extends State<HomePage> {
                           radius: 45,
                           child: CircleAvatar(
                             radius: 41,
-                            backgroundImage: AssetImage(
-                                "assets/images/pic${index + 1}.jfif"),
+                            backgroundImage:
+                                AssetImage("assets/images/pic${index + 1}.jpg"),
                           ),
                         ),
                         Text("Sheeraz raz")
@@ -98,7 +98,9 @@ class _HomePageState extends State<HomePage> {
                 shrinkWrap: true,
                 itemCount: 4,
                 itemBuilder: (context, index) {
-                  return const PostsArea();
+                  return PostsArea(
+                    index: index,
+                  );
                 })
           ],
         ),
