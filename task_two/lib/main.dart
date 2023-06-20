@@ -41,7 +41,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.transparent,
+        // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        // mini: false,
+        child: Icon(
+          Icons.add,
+          size: 30,
+          color: Colors.black,
+        ),
+        backgroundColor: Colors.blue[100],
         onPressed: () {},
       ),
 

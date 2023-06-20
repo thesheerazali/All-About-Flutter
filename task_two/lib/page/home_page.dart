@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../widgets/post_show_area.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -17,8 +19,6 @@ class _HomePageState extends State<HomePage> {
         "assets/images/pic4.jfif"
         "assets/images/pic5.jfif"
         "assets/images/pic6.jfif"
-          
-
   ];
   @override
   Widget build(BuildContext context) {
@@ -64,28 +64,44 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(children: [
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List.generate(
-                8,
-                (index) => Container(
-                  height: 100,
-                  width: 100,
-                  padding: EdgeInsets.all(8),
-                  child: CircleAvatar(
-                      backgroundImage:
-                          AssetImage("assets/images/pic${index + 1}.jfif")),
-
-                  // child: CircleAvatar(
-                  //   backgroundImage: AssetImage(storyImages[index]),
-                  // ),
+        physics: const ScrollPhysics(),
+        child: Column(
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(
+                  6,
+                  (index) => Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 20),
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.blue[300],
+                          radius: 45,
+                          child: CircleAvatar(
+                            radius: 41,
+                            backgroundImage: AssetImage(
+                                "assets/images/pic${index + 1}.jfif"),
+                          ),
+                        ),
+                        Text("Sheeraz raz")
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
-        ]),
+            ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: 4,
+                itemBuilder: (context, index) {
+                  return const PostsArea();
+                })
+          ],
+        ),
       ),
     );
   }
