@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+import '../utils/images.dart';
 import 'buttons.dart';
 
 class MainContainer extends StatelessWidget {
@@ -155,9 +156,10 @@ class MainContainer extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(50.r),
                         topRight: Radius.circular(50.r))),
-                child: const InkWell(
+                child: InkWell(
                   child: Padding(
-                    padding: EdgeInsets.only(top: 10, right: 16, left: 16),
+                    padding:
+                        EdgeInsets.only(top: 15.h, right: 16.w, left: 16.w),
                     child: MasonryCoustom(),
                   ),
                 ),
@@ -171,7 +173,7 @@ class MainContainer extends StatelessWidget {
 }
 
 class MasonryCoustom extends StatelessWidget {
-  const MasonryCoustom({
+  MasonryCoustom({
     super.key,
   });
 
@@ -185,8 +187,8 @@ class MasonryCoustom extends StatelessWidget {
           crossAxisCount: 2),
       itemBuilder: (context, index) => ClipRRect(
         borderRadius: BorderRadius.circular(15),
-        child: Image.asset(
-          "assets/images/pic${index + 1}.jpg",
+        child: Image.network(
+          AllImages.mainProfileImages[index],
           fit: BoxFit.cover,
         ),
       ),

@@ -6,11 +6,16 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-          child: Text(
-        "Chat Page",
-      )),
-    );
+        body: Container(
+      height: double.infinity,
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: NetworkImage(
+                "https://miro.medium.com/v2/resize:fit:4800/0*P3j1utNledbZ-wxm"),
+            fit: BoxFit.cover),
+      ),
+      //child: // Foreground widget here
+    ));
   }
 }
