@@ -38,12 +38,7 @@ class _HomePageState extends State<HomePage> {
     "@Sufiyan98",
     "@Zeeshan45"
   ];
-  var postImages = [
-    "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg"
-        "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg"
-        "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg"
-        "https://cdn.pixabay.com/photo/2018/08/23/07/35/thunderstorm-3625405_1280.jpg"
-  ];
+  
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +126,7 @@ class _HomePageState extends State<HomePage> {
                     index: index,
                     profileNmaes: profileNames[index],
                     usernmae: userNames[index],
-                    imageUrl: postImages[index],
+                    
                   );
                 })
           ],
