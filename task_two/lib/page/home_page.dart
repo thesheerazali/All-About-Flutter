@@ -12,14 +12,39 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<String> storyImages = [
-    "assets/images/pic1.jfif"
-        "assets/images/pic2.jfif"
-        "assets/images/pic3.jfif"
-        "assets/images/pic4.jfif"
-        "assets/images/pic5.jfif"
-        "assets/images/pic6.jfif"
+  var storyName = [
+    "Sheeraz",
+    "Shahzeb",
+    "Hassnain",
+    "Zain",
+    "Sufiyan",
+    "Zeeshan"
   ];
+
+  var profileNames = [
+    "Sheeraz Ali",
+    "Shahzeb Khan",
+    "Hassnain Ali",
+    "Sayed Zain",
+    "M Sufiyan",
+    "Zeeshan Ali"
+  ];
+
+  var userNames = [
+    "@sheeraz76",
+    "@Shahzeb13",
+    "@Hassnain87",
+    "@Zain78",
+    "@Sufiyan98",
+    "@Zeeshan45"
+  ];
+  var postImages = [
+    "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg"
+        "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg"
+        "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg"
+        "https://cdn.pixabay.com/photo/2018/08/23/07/35/thunderstorm-3625405_1280.jpg"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +111,11 @@ class _HomePageState extends State<HomePage> {
                                 AssetImage("assets/images/pic${index + 1}.jpg"),
                           ),
                         ),
-                        Text("Sheeraz raz")
+                        Text(
+                          storyName[index],
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600, fontSize: 14.sp),
+                        )
                       ],
                     ),
                   ),
@@ -100,6 +129,9 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context, index) {
                   return PostsArea(
                     index: index,
+                    profileNmaes: profileNames[index],
+                    usernmae: userNames[index],
+                    imageUrl: postImages[index],
                   );
                 })
           ],

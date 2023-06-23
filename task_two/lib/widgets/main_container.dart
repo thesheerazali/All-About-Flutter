@@ -186,7 +186,7 @@ class MasonryCoustom extends StatelessWidget {
       itemBuilder: (context, index) => ClipRRect(
         borderRadius: BorderRadius.circular(15),
         child: Image.asset(
-          "assets/images/pic${index + 1}.jfif",
+          "assets/images/pic${index + 1}.jpg",
           fit: BoxFit.cover,
         ),
       ),

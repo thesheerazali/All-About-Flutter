@@ -6,7 +6,9 @@ import '../widgets/app_bar.dart';
 import '../widgets/main_container.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  const ProfilePage({super.key, });
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
             ),
-            const TopBar(),
+            TopBar(),
             const MainContainer(),
             Padding(
               padding: EdgeInsets.only(top: 110.h, left: 130.w),
@@ -32,7 +34,7 @@ class ProfilePage extends StatelessWidget {
                 backgroundColor: Colors.white,
                 child: CircleAvatar(
                   radius: 55,
-                  backgroundImage: AssetImage("assets/images/sheeraz3.jpg"),
+                  backgroundImage: AssetImage("assets/images/pic1.jpg"),
                 ),
               ),
             ),

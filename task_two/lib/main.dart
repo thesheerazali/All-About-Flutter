@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:task_two/page/chat_page.dart';
 import 'package:task_two/page/home_page.dart';
+import 'package:task_two/page/notification_page.dart';
 import 'package:task_two/page/profile_page.dart';
 
 void main() {
@@ -20,42 +22,59 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: GoogleFonts.poppins().fontFamily,
         ),
-        home: MyHomePage(),
+        home: MainPage(),
       ),
       designSize: const Size(393.68, 851.97),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int currentPage = 0;
+class _MainPageState extends State<MainPage> {
+  static int currentPage = 0;
+  List pages = [
+    const HomePage(),
+    const ChatPage(),
+    const ProfilePage(),
+    const NotificationPage(),
+  ];
+
+  void onTab(int index) {
+    setState(() {
+      currentPage = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       resizeToAvoidBottomInset: false,
       floatingActionButton: FloatingActionButton(
         // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         // mini: false,
-        child: Icon(
+
+        backgroundColor: Colors.blue[100],
+        onPressed: () {},
+        child: const Icon(
           Icons.add,
           size: 30,
           color: Colors.black,
         ),
-        backgroundColor: Colors.blue[100],
-        onPressed: () {},
       ),
 
       // Here's the new attribute:
 
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
+        notchMargin: 10.0,
+        shape: const CircularNotchedRectangle(),
         color: Colors.blue[500],
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
@@ -103,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: HomePage(),
+      body: pages[currentPage],
     );
   }
 }
