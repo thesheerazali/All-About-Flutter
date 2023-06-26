@@ -44,7 +44,7 @@ class _PostsAreaState extends State<PostsArea> {
           // image: DecorationImage(
           //     image: AssetImage("assets/images/pic${widget.index + 1}.jfif"),
           //     fit: BoxFit.cover),
-          color: Colors.blue[100],
+          color: Color.fromRGBO(230, 238, 250, 1),
           borderRadius: BorderRadius.circular(40),
         ),
         //  height: 350.h,

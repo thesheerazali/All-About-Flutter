@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: GoogleFonts.poppins().fontFamily,
         ),
-        home: HomePage(),
+        home: ChatPage(),
       ),
       designSize: const Size(393.68, 851.97),
     );
