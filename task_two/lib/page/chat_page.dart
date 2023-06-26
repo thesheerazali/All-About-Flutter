@@ -1,8 +1,8 @@
 import 'package:blurrycontainer/blurrycontainer.dart';
+import 'package:chat_bubbles/chat_bubbles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:task_two/utils/images.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
@@ -34,15 +34,15 @@ class ChatPage extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(vertical: 6.h, horizontal: 6.w),
                       child: Container(
-                        decoration: const BoxDecoration(
-                            color: Color.fromRGBO(230, 238, 250, 1),
+                        decoration: BoxDecoration(
+                            color: const Color.fromRGBO(230, 238, 250, 1),
                             borderRadius:
-                                BorderRadius.all(Radius.circular(50))),
+                                BorderRadius.all(Radius.circular(50.r))),
                         child: Column(
                           children: [
                             Padding(
                               padding: EdgeInsets.symmetric(
-                                  vertical: 20.h, horizontal: 30.w),
+                                  vertical: 26.h, horizontal: 28.w),
                               child: Row(
                                 children: [
                                   CircleAvatar(
@@ -76,6 +76,9 @@ class ChatPage extends StatelessWidget {
                                       )
                                     ],
                                   ),
+                                  SizedBox(
+                                    width: 60.w,
+                                  ),
                                   Container(
                                     height: 45.h,
                                     width: 45.w,
@@ -84,14 +87,83 @@ class ChatPage extends StatelessWidget {
                                             87, 144, 223, 1),
                                         borderRadius:
                                             BorderRadius.circular(40.r)),
-                                    child: IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(Icons.cancel_outlined),
+                                    child: Image.asset(
+                                      "assets/images/cancelIcon.png",
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
-                            )
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 14.w, vertical: 12.h),
+                              child: Divider(
+                                color: const Color.fromRGBO(0, 0, 0, 0.5),
+                                height: 1.h,
+                              ),
+                            ),
+
+                           const SizedBox(
+                              height: 100,
+                            ),
+
+                            Expanded(
+                                child: Container(
+                              child: Column(children: [
+                                BubbleNormal(
+                                  text: 'bubble normal without tail',
+                                  isSender: false,
+                                  color: Color(0xFF1B97F3),
+                                  tail: true,
+                                  textStyle: const TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+
+                                BubbleNormal(
+                                  text: 'bubble normal without tail',
+                                  isSender: false,
+                                  color: Color(0xFF1B97F3),
+                                  tail: true,
+                                  textStyle: const TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+
+                                BubbleNormal(
+                                  text: 'bubble normal without tail',
+                                  isSender: false,
+                                  color: Color(0xFF1B97F3),
+                                  tail: true,
+                                  textStyle: const TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+
+
+                                
+                              ]),
+                            ))
+                            // Stack(
+
+                            //   children: [
+                            //     Container(
+                            //       height: 50.h,
+                            //       width: 200.w,
+                            //       decoration: const BoxDecoration(
+                            //         color: Colors.white,
+                            //         borderRadius: BorderRadius.only(
+                            //           topLeft: Radius.circular(40),
+                            //           topRight: Radius.circular(40),
+                            //           bottomRight: Radius.circular(40),
+                            //         ),
+                            //       ),
+                            //     )
+                            //   ],
+                            // )
                           ],
                         ),
                       ),
