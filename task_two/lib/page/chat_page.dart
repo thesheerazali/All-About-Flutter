@@ -151,12 +151,11 @@ class ChatPage extends StatelessWidget {
                                       color: Colors.black,
                                     ),
                                   ),
-                                  SizedBox(height: 80.h),
+                                  // SizedBox(height: .h),
                                   Padding(
                                     padding: EdgeInsets.symmetric(
-                                      horizontal: 12.w,
-                                    ),
-                                    child: Wrap(
+                                        horizontal: 12.w, vertical: 20),
+                                    child: Row(
                                       children: [
                                         Container(
                                           height: 45.h,
