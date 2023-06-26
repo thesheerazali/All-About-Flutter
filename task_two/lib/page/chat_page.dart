@@ -107,7 +107,8 @@ class ChatPage extends StatelessWidget {
                               height: 300,
                             ),
 
-                            Container(
+                            Expanded(
+                              //  flex: 2,
                               child: Column(
                                 children: [
                                   BubbleNormal(
@@ -155,7 +156,7 @@ class ChatPage extends StatelessWidget {
                                     padding: EdgeInsets.symmetric(
                                       horizontal: 12.w,
                                     ),
-                                    child: Row(
+                                    child: Wrap(
                                       children: [
                                         Container(
                                           height: 45.h,
@@ -171,15 +172,50 @@ class ChatPage extends StatelessWidget {
                                             color: Colors.white,
                                           ),
                                         ),
-                                        const TextField(
-                                          decoration: InputDecoration(
-                                            border: OutlineInputBorder(),
-                                            hintText: 'Enter a search term',
-                                          ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Stack(
+                                          alignment: Alignment.bottomRight,
+                                          children: [
+                                            Container(
+                                              height: 45.h,
+                                              width: 280.w,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30)),
+                                              child: TextField(
+                                                decoration: InputDecoration(
+                                                  border: OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30)),
+                                                  hintText: 'Text Here',
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              height: 45.h,
+                                              width: 45.w,
+                                              decoration: BoxDecoration(
+                                                  color: const Color.fromRGBO(
+                                                      87, 144, 223, 1),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          40)),
+                                              child: Icon(
+                                                Icons.send,
+                                                size: 25.sp,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ],
                                         )
                                       ],
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             )
