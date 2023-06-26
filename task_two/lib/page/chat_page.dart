@@ -50,15 +50,15 @@ class ChatPage extends StatelessWidget {
                                     backgroundImage: const AssetImage(
                                         "assets/images/pic1.jpg"),
                                   ),
-                                  const SizedBox(
-                                    width: 10,
+                                  SizedBox(
+                                    width: 15.w,
                                   ),
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "Benjamin Moores",
+                                        "Sheeraz Ali",
                                         style: TextStyle(
                                           color: Color.fromRGBO(0, 0, 0, 1),
                                           fontSize: 17.sp,
@@ -77,7 +77,7 @@ class ChatPage extends StatelessWidget {
                                     ],
                                   ),
                                   SizedBox(
-                                    width: 60.w,
+                                    width: 70.w,
                                   ),
                                   Container(
                                     height: 45.h,
@@ -103,50 +103,86 @@ class ChatPage extends StatelessWidget {
                               ),
                             ),
 
-                           const SizedBox(
-                              height: 100,
+                            const SizedBox(
+                              height: 300,
                             ),
 
-                            Expanded(
-                                child: Container(
-                              child: Column(children: [
-                                BubbleNormal(
-                                  text: 'bubble normal without tail',
-                                  isSender: false,
-                                  color: Color(0xFF1B97F3),
-                                  tail: true,
-                                  textStyle: const TextStyle(
-                                    fontSize: 20,
+                            Container(
+                              child: Column(
+                                children: [
+                                  BubbleNormal(
+                                    text: 'Kaha Ho?',
+                                    isSender: false,
                                     color: Colors.white,
+                                    tail: true,
+                                    textStyle: TextStyle(
+                                      fontSize: 17.sp,
+                                      color: Colors.black,
+                                    ),
                                   ),
-                                ),
-
-                                BubbleNormal(
-                                  text: 'bubble normal without tail',
-                                  isSender: false,
-                                  color: Color(0xFF1B97F3),
-                                  tail: true,
-                                  textStyle: const TextStyle(
-                                    fontSize: 20,
+                                  BubbleNormal(
+                                    text: 'Main Aw Raha hoooon',
+                                    isSender: false,
                                     color: Colors.white,
+                                    tail: true,
+                                    textStyle: TextStyle(
+                                      fontSize: 17.sp,
+                                      color: Colors.black,
+                                    ),
                                   ),
-                                ),
-
-                                BubbleNormal(
-                                  text: 'bubble normal without tail',
-                                  isSender: false,
-                                  color: Color(0xFF1B97F3),
-                                  tail: true,
-                                  textStyle: const TextStyle(
-                                    fontSize: 20,
+                                  BubbleNormal(
+                                    text: 'haawww Theeek haii ajao',
+                                    isSender: true,
+                                    color: Color.fromRGBO(87, 144, 223, 1),
+                                    tail: true,
+                                    textStyle: TextStyle(
+                                      fontSize: 17.sp,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  BubbleNormal(
+                                    text: 'Commingggg',
+                                    isSender: false,
                                     color: Colors.white,
+                                    tail: true,
+                                    textStyle: TextStyle(
+                                      fontSize: 17.sp,
+                                      color: Colors.black,
+                                    ),
                                   ),
-                                ),
-
-
-                                
-                              ]),
-                            ))
+                                  SizedBox(height: 80.h),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 12.w,
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          height: 45.h,
+                                          width: 45.w,
+                                          decoration: BoxDecoration(
+                                              color: const Color.fromRGBO(
+                                                  87, 144, 223, 1),
+                                              borderRadius:
+                                                  BorderRadius.circular(40)),
+                                          child: Icon(
+                                            Icons.camera_alt,
+                                            size: 25.sp,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                        const TextField(
+                                          decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText: 'Enter a search term',
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
                             // Stack(
 
                             //   children: [
