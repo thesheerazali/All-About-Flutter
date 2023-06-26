@@ -22,7 +22,7 @@ class PostsArea extends StatefulWidget {
   final postImages = [
     "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg",
     "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg",
-    "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg",
+    "https://cdn.pixabay.com/photo/2018/08/23/07/35/thunderstorm-3625405_1280.jpg",
     "https://cdn.pixabay.com/photo/2018/08/23/07/35/thunderstorm-3625405_1280.jpg",
   ];
 
@@ -118,8 +118,7 @@ class _PostsAreaState extends State<PostsArea> {
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 21.w),
                         child: Row(
-
-                            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Wrap(
                                 crossAxisAlignment: WrapCrossAlignment.center,
@@ -129,7 +128,7 @@ class _PostsAreaState extends State<PostsArea> {
                                     icon: const Icon(
                                       MyCostumIcons.chat,
                                       color: Colors.white,
-                                      size: 30,
+                                      size: 24,
                                     ),
                                   ),
                                   Text(
@@ -149,7 +148,7 @@ class _PostsAreaState extends State<PostsArea> {
                                     icon: const Icon(
                                       MyCostumIcons.huge2,
                                       color: Colors.white,
-                                      size: 30,
+                                      size: 24,
                                     ),
                                   ),
                                   Text(
@@ -161,15 +160,12 @@ class _PostsAreaState extends State<PostsArea> {
                                   )
                                 ],
                               ),
-                              SizedBox(
-                                width: 82.w,
-                              ),
                               IconButton(
                                 onPressed: () {},
                                 icon: const Icon(
                                   MyCostumIcons.send,
                                   color: Colors.white,
-                                  size: 30,
+                                  size: 24,
                                 ),
                               ),
                               IconButton(
@@ -177,7 +173,7 @@ class _PostsAreaState extends State<PostsArea> {
                                 icon: const Icon(
                                   MyCostumIcons.huge1,
                                   color: Colors.white,
-                                  size: 30,
+                                  size: 24,
                                 ),
                               ),
                             ]),
