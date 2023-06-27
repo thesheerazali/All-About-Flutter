@@ -7,6 +7,9 @@ import 'package:task_two/page/chat_page.dart';
 import 'package:task_two/page/home_page.dart';
 import 'package:task_two/page/notification_page.dart';
 import 'package:task_two/page/profile_page.dart';
+import 'package:task_two/page/text.dart';
+
+// Icon Change in Appicon.co
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +26,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: GoogleFonts.poppins().fontFamily,
         ),
-        home: HomePage(),
+        home: TextDropDown(),
       ),
       designSize: const Size(393.68, 851.97),
     );

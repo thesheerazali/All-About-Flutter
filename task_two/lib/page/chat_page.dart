@@ -10,6 +10,7 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Container(
             height: double.infinity.h,
             width: double.infinity.w,
@@ -108,124 +109,112 @@ class ChatPage extends StatelessWidget {
                               height: 300,
                             ),
 
-                            SingleChildScrollView(
-                              child: Expanded(
-                                child: SizedBox(
-                                  child: Column(
+                            Column(
+                              children: [
+                                BubbleNormal(
+                                  text: 'Kaha Ho?',
+                                  isSender: false,
+                                  color: Colors.white,
+                                  tail: true,
+                                  textStyle: TextStyle(
+                                    fontSize: 17.sp,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                BubbleNormal(
+                                  text: 'Main Aw Raha hoooon',
+                                  isSender: false,
+                                  color: Colors.white,
+                                  tail: true,
+                                  textStyle: TextStyle(
+                                    fontSize: 17.sp,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                BubbleNormal(
+                                  text: 'haawww Theeek haii ajao',
+                                  isSender: true,
+                                  color: Color.fromRGBO(87, 144, 223, 1),
+                                  tail: true,
+                                  textStyle: TextStyle(
+                                    fontSize: 17.sp,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                BubbleNormal(
+                                  text: 'Commingggg',
+                                  isSender: false,
+                                  color: Colors.white,
+                                  tail: true,
+                                  textStyle: TextStyle(
+                                    fontSize: 17.sp,
+                                    color: Colors.black,
+                                  ),
+                                ),
+
+                                // SizedBox(height: .h),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 12.w, vertical: 20),
+                                  child: Row(
                                     children: [
-                                      BubbleNormal(
-                                        text: 'Kaha Ho?',
-                                        isSender: false,
-                                        color: Colors.white,
-                                        tail: true,
-                                        textStyle: TextStyle(
-                                          fontSize: 17.sp,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                      BubbleNormal(
-                                        text: 'Main Aw Raha hoooon',
-                                        isSender: false,
-                                        color: Colors.white,
-                                        tail: true,
-                                        textStyle: TextStyle(
-                                          fontSize: 17.sp,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                      BubbleNormal(
-                                        text: 'haawww Theeek haii ajao',
-                                        isSender: true,
-                                        color: Color.fromRGBO(87, 144, 223, 1),
-                                        tail: true,
-                                        textStyle: TextStyle(
-                                          fontSize: 17.sp,
+                                      Container(
+                                        height: 45.h,
+                                        width: 45.w,
+                                        decoration: BoxDecoration(
+                                            color: const Color.fromRGBO(
+                                                87, 144, 223, 1),
+                                            borderRadius:
+                                                BorderRadius.circular(40)),
+                                        child: Icon(
+                                          Icons.camera_alt,
+                                          size: 25.sp,
                                           color: Colors.white,
                                         ),
                                       ),
-                                      BubbleNormal(
-                                        text: 'Commingggg',
-                                        isSender: false,
-                                        color: Colors.white,
-                                        tail: true,
-                                        textStyle: TextStyle(
-                                          fontSize: 17.sp,
-                                          color: Colors.black,
-                                        ),
+                                      const SizedBox(
+                                        width: 10,
                                       ),
-
-                                      // SizedBox(height: .h),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 12.w, vertical: 20),
-                                        child: Row(
-                                          children: [
-                                            Container(
-                                              height: 45.h,
-                                              width: 45.w,
-                                              decoration: BoxDecoration(
-                                                  color: const Color.fromRGBO(
-                                                      87, 144, 223, 1),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          40)),
-                                              child: Icon(
-                                                Icons.camera_alt,
-                                                size: 25.sp,
+                                      Stack(
+                                        alignment: Alignment.bottomRight,
+                                        children: [
+                                          Container(
+                                            height: 45.h,
+                                            width: 280.w,
+                                            decoration: BoxDecoration(
                                                 color: Colors.white,
+                                                borderRadius:
+                                                    BorderRadius.circular(30)),
+                                            child: TextField(
+                                              decoration: InputDecoration(
+                                                border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30)),
+                                                hintText: 'Text Here',
                                               ),
                                             ),
-                                            const SizedBox(
-                                              width: 10,
+                                          ),
+                                          Container(
+                                            height: 45.h,
+                                            width: 45.w,
+                                            decoration: BoxDecoration(
+                                                color: const Color.fromRGBO(
+                                                    87, 144, 223, 1),
+                                                borderRadius:
+                                                    BorderRadius.circular(40)),
+                                            child: Icon(
+                                              Icons.send,
+                                              size: 25.sp,
+                                              color: Colors.white,
                                             ),
-                                            Stack(
-                                              alignment: Alignment.bottomRight,
-                                              children: [
-                                                Container(
-                                                  height: 45.h,
-                                                  width: 280.w,
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.white,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              30)),
-                                                  child: TextField(
-                                                    decoration: InputDecoration(
-                                                      border:
-                                                          OutlineInputBorder(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          30)),
-                                                      hintText: 'Text Here',
-                                                    ),
-                                                  ),
-                                                ),
-                                                Container(
-                                                  height: 45.h,
-                                                  width: 45.w,
-                                                  decoration: BoxDecoration(
-                                                      color:
-                                                          const Color.fromRGBO(
-                                                              87, 144, 223, 1),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              40)),
-                                                  child: Icon(
-                                                    Icons.send,
-                                                    size: 25.sp,
-                                                    color: Colors.white,
-                                                  ),
-                                                ),
-                                              ],
-                                            )
-                                          ],
-                                        ),
-                                      ),
+                                          ),
+                                        ],
+                                      )
                                     ],
                                   ),
                                 ),
-                              ),
+                              ],
                             )
                             // Stack(
 
