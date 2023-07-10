@@ -48,19 +48,21 @@ class HomePage extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
               AllWidgets.topText(name),
               Expanded(
                 child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: 20,
+                  // shrinkWrap: true,
+                  itemCount: icons.length,
                   itemBuilder: (context, index) {
-                    return const ListTile(
-                      leading: Icon(
-                        CupertinoIcons.car_detailed,
-                        color: Colors.blue,
+                    return Card(
+                      elevation: 2,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
+                      child: ListTile(
+                        leading: icons[index],
                       ),
                     );
                   },
