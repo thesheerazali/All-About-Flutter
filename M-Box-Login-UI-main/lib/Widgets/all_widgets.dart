@@ -17,7 +17,7 @@ class AllWidgets {
         title: title,
         trailing: const Icon(
           Icons.arrow_right_sharp,
-          size: 32,
+          size: 30,
         ),
       ),
     );
