@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:roll_dice_app/Widgets/all_widgets.dart';
+
+import 'Widgets/all_widgets.dart';
+
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
