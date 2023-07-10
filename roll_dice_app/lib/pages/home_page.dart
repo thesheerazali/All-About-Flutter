@@ -13,13 +13,18 @@ class HomePage extends StatelessWidget {
       color: Colors.blue,
     ),
     const Icon(
-      CupertinoIcons.home,
+      CupertinoIcons.creditcard_fill,
       color: Colors.blue,
     ),
     const Icon(
       CupertinoIcons.airplane,
       color: Colors.blue,
     )
+  ];
+  final List<Widget> title = [
+    const Text("Apply For auto Loan"),
+    const Text("Apply For credit card"),
+    const Text("Apply For plan"),
   ];
 
   @override
@@ -32,7 +37,13 @@ class HomePage extends StatelessWidget {
             color: Colors.white,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Icon(Icons.home_filled), Icon(Icons.app_blocking)],
+              children: [
+                Icon(
+                  Icons.home_filled,
+                  color: Colors.blue,
+                ),
+                Icon(Icons.app_blocking, color: Colors.blue)
+              ],
             )),
         appBar: AppBar(
           leading: const Icon(
@@ -48,13 +59,16 @@ class HomePage extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AllWidgets.topText(name),
+              const SizedBox(
+                height: 10,
+              ),
               Expanded(
                 child: ListView.builder(
-                  // shrinkWrap: true,
                   itemCount: icons.length,
                   itemBuilder: (context, index) {
                     return Card(
@@ -63,6 +77,11 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12)),
                       child: ListTile(
                         leading: icons[index],
+                        title: title[index],
+                        trailing: const Icon(
+                          Icons.arrow_right_sharp,
+                          size: 32,
+                        ),
                       ),
                     );
                   },
