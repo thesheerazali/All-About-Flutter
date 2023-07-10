@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:roll_dice_app/pages/Widgets/all_widgets.dart';
+import 'package:roll_dice_app/Widgets/all_widgets.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -71,18 +71,9 @@ class HomePage extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: icons.length,
                   itemBuilder: (context, index) {
-                    return Card(
-                      elevation: 2,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)),
-                      child: ListTile(
-                        leading: icons[index],
-                        title: title[index],
-                        trailing: const Icon(
-                          Icons.arrow_right_sharp,
-                          size: 32,
-                        ),
-                      ),
+                    return AllWidgets.listTile(
+                      icons[index],
+                      title[index],
                     );
                   },
                 ),
