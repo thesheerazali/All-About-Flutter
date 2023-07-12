@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lgoin_ui/pages/task2.dart';
+//import 'package:lgoin_ui/pages/task2.dart';
+import 'package:lgoin_ui/pages/task3.dart';
 
 //import 'pages/task1.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TaskTwo(),
+      home: HomePage(),
     );
   }
 }
