@@ -17,7 +17,7 @@ class _DataFromApiState extends State<DataFromApi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Api Task"),
+        title: Text("Api Task Sheeraz"),
         centerTitle: true,
       ),
       body: FutureBuilder(
@@ -32,18 +32,15 @@ class _DataFromApiState extends State<DataFromApi> {
                       temperatures[index].thumbnailUrl,
                       width: 150,
                       fit: BoxFit.cover,
-                    ),
+                    ),///////////*
                     title: Text(temperatures[index].title),
                     subtitle: Text('Photo ID: ${temperatures[index].id}'),
                   );
                 },
               );
             } else {
-              const Center(
-                child: CircularProgressIndicator(),
-              );
+              return const Center(child: CircularProgressIndicator());
             }
-            return const Center(child: CircularProgressIndicator());
           }),
     );
   }
@@ -54,6 +51,7 @@ class _DataFromApiState extends State<DataFromApi> {
     var data = jsonDecode(response.body.toString());
 
     if (response.statusCode == 200) {
+      temperatures.cast();
       for (Map<String, dynamic> index in data) {
         temperatures.add(PictureFromApi.fromJson(index));
       }

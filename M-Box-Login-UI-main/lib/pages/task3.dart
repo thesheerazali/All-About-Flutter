@@ -1,8 +1,8 @@
-import 'dart:convert';
+
 
 import 'package:flutter/material.dart';
 import 'package:lgoin_ui/models/api_model.dart';
-import 'package:http/http.dart' as http;
+
 import 'package:lgoin_ui/models/data_from_api.dart';
 import 'package:lgoin_ui/models/data_from_json.dart';
 
