@@ -32,7 +32,7 @@ class _DataFromApiState extends State<DataFromApi> {
                       temperatures[index].thumbnailUrl,
                       width: 150,
                       fit: BoxFit.cover,
-                    ),///////////*
+                    ), ///////////*
                     title: Text(temperatures[index].title),
                     subtitle: Text('Photo ID: ${temperatures[index].id}'),
                   );
@@ -51,7 +51,7 @@ class _DataFromApiState extends State<DataFromApi> {
     var data = jsonDecode(response.body.toString());
 
     if (response.statusCode == 200) {
-      temperatures.cast();
+      temperatures.clear();
       for (Map<String, dynamic> index in data) {
         temperatures.add(PictureFromApi.fromJson(index));
       }
