@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
         },
         backgroundColor: Colors.white,
         child: const Icon(
-          CupertinoIcons.location_solid,
+          CupertinoIcons.arrow_3_trianglepath,
           color: Colors.blue,
         ),
       ),
