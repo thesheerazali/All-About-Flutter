@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/screens/quiz_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -32,15 +33,12 @@ class SplashScreen extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              // ElevatedButton(
-              //   onPressed: () {},
-              //   style: ButtonStyle(
-              //       backgroundColor:
-              //           MaterialStateProperty.all(Colors.deepPurple)),
-              //   child: const Text("Start Quiz"),
-              // )
               OutlinedButton.icon(
-                onPressed: () {},
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const QuizScreen(),
+                    )),
                 icon: const Icon(Icons.arrow_right_alt),
                 style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
                 label: const Text("Start Quiz"),
