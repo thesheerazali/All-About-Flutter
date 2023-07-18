@@ -40,6 +40,8 @@ dependencies:
   uuid: ^3.0.7
   http: ^1.1.0
   geocoding: ^2.1.0
+  custom_info_window: ^1.0.1
+ 
 
 dev_dependencies:
   flutter_test:
