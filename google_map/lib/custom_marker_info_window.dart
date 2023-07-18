@@ -62,7 +62,7 @@ class _CustomMarkerInfoWindowScreenState
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                             image: NetworkImage(
-                                'https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?cs=srgb&dl=pexels-narda-yescas-1566837.jpg&fm=jpg'),
+                                'https://media.istockphoto.com/id/1403973419/photo/table-top-of-food-spread-on-table.jpg?s=2048x2048&w=is&k=20&c=huMXHeOEi-72-TuRBbpjQppkbp4ABrW2Cj1Xgofl2Xc='),
                             fit: BoxFit.fitWidth,
                             filterQuality: FilterQuality.high),
                         borderRadius: const BorderRadius.all(
@@ -79,7 +79,7 @@ class _CustomMarkerInfoWindowScreenState
                           SizedBox(
                             width: 100,
                             child: Text(
-                              'Beef Tacos',
+                              'Food Breaks',
                               maxLines: 1,
                               overflow: TextOverflow.fade,
                               softWrap: false,
@@ -87,7 +87,7 @@ class _CustomMarkerInfoWindowScreenState
                           ),
                           const Spacer(),
                           Text(
-                            '.3 mi.',
+                            '8 mi.',
                             // widget.data!.date!,
                           )
                         ],
@@ -97,7 +97,7 @@ class _CustomMarkerInfoWindowScreenState
                       padding:
                           const EdgeInsets.only(top: 10, left: 10, right: 10),
                       child: Text(
-                        'Help me finish these tacos! I got a platter from Costco and it’s too much.',
+                        'We Serve Love With Food as Well.',
                         maxLines: 2,
                       ),
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_map/polyline_screen.dart';
 
 import 'custom_marker_info_window.dart';
 import 'custom_marker_screen.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CustomMarkerInfoWindowScreen(),
+      home: PolylineScreen(),
     );
   }
 }
