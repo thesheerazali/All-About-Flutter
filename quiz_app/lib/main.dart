@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/screens/splash_screen.dart';
 
 void main() {
   runApp(const QuizApp());
@@ -7,10 +8,10 @@ void main() {
 class QuizApp extends StatelessWidget {
   const QuizApp({super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      home: SplashScreen(),
+    );
   }
 }
