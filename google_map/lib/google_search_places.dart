@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:uuid/uuid.dart';
 import 'package:http/http.dart' as http;
 
@@ -41,16 +41,20 @@ class _GoogleSearchPlacesState extends State<GoogleSearchPlaces> {
   }
 
   void getSugestions(String input) async {
-    String kPLACES_API_KEY = "AIzaSyB0-X70PeO1P4ofM9vdRSOTjJlOUSjO48g";
+    String kPLACES_API_KEY = "AIzaSyCeJZ4a1xNljXw8F9TG1zO2xweaiIKTV2w";
     String baseURL =
         "https://maps.googleapis.com/maps/api/place/autocomplete/json";
     String request =
         '$baseURL?input=$input&key=$kPLACES_API_KEY&sessiontoken=$_sessionToken';
 
     var responce = await http.get(Uri.parse(request));
+
+    print("responce");
     print(responce.body.toString());
     if (responce.statusCode == 200) {
-      _places = jsonDecode(responce.body.toString())["predictions"];
+      setState(() {
+        _places = jsonDecode(responce.body.toString())["predictions"];
+      });
     } else {
       throw Exception("faild to load");
     }
@@ -72,6 +76,24 @@ class _GoogleSearchPlacesState extends State<GoogleSearchPlaces> {
                 hintText: "Search Place",
               ),
             ),
+            Expanded(
+                child: ListView.builder(
+              itemCount: _places.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  onTap: () async {
+                    List<Location> location = await locationFromAddress(
+                        _places[index]["description"]);
+
+                    print(location.last.latitude);
+                    print(location.last.longitude);
+                  },
+                  title: Text(
+                    _places[index]["description"],
+                  ),
+                );
+              },
+            ))
           ],
         ),
       ),
