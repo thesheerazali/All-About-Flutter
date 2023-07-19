@@ -2,11 +2,14 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:quiz_app/widgets/answer_button.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../data/queations.dart';
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({super.key});
+  const QuizScreen({super.key, required this.onSelectAnswer});
+
+  final void Function(String answer) onSelectAnswer;
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -15,7 +18,8 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   var currentAnswerIndex = 0;
 
-  void answerQueation() {
+  void answerQueation(String selectedAnswer) {
+    widget.onSelectAnswer(selectedAnswer);
     setState(() {
       currentAnswerIndex++;
     });
@@ -41,16 +45,21 @@ class _QuizScreenState extends State<QuizScreen> {
             children: [
               Text(
                 currentQueations.text,
-                style: const TextStyle(color: Colors.white),
+                style: GoogleFonts.lato(
+                    color: Color.fromARGB(255, 184, 132, 243),
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(
-                height: 50,
+                height: 30,
               ),
               ...currentQueations.getShuffledAnswers().map((answer) {
                 return AnswerButton(
                   ansText: answer,
-                  ontab: answerQueation,
+                  ontab: () {
+                    answerQueation(answer);
+                  },
                 );
               })
             ],

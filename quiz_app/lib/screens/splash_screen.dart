@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/screens/quiz_screen.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+  const SplashScreen(
+    this.startQuiz, {
+    super.key,
+  });
+
+  final void Function() startQuiz;
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +38,7 @@ class SplashScreen extends StatelessWidget {
                 height: 50,
               ),
               OutlinedButton.icon(
-                onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const QuizScreen(),
-                    )),
+                onPressed: startQuiz,
                 icon: const Icon(Icons.arrow_right_alt),
                 style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
                 label: const Text("Start Quiz"),
