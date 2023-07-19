@@ -3,6 +3,8 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/widgets/answer_button.dart';
 
+import '../data/queations.dart';
+
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});
 
@@ -11,12 +13,22 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
+  var currentAnswerIndex = 0;
+
+  void answerQueation() {
+    setState(() {
+      currentAnswerIndex++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    var currentQueations = questions[currentAnswerIndex];
     return Scaffold(
       body: SizedBox(
         width: double.infinity,
         child: Container(
+          padding: const EdgeInsets.all(40),
           decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
               Color.fromARGB(255, 78, 13, 151),
@@ -25,18 +37,22 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Text(
-                "Queationsssss",
-                style: TextStyle(fontSize: 24, color: Colors.white),
+              Text(
+                currentQueations.text,
+                style: const TextStyle(color: Colors.white),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(
                 height: 50,
               ),
-              AnswerButton(ansText: "Answer 1", ontab: () {}),
-              AnswerButton(ansText: "Answer 2", ontab: () {}),
-              AnswerButton(ansText: "Answer 3", ontab: () {}),
-              AnswerButton(ansText: "Answer 4", ontab: () {}),
+              ...currentQueations.getShuffledAnswers().map((answer) {
+                return AnswerButton(
+                  ansText: answer,
+                  ontab: answerQueation,
+                );
+              })
             ],
           ),
         ),
