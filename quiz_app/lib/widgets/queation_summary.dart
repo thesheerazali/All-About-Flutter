@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_app/widgets/queation_identifier.dart';
+
 import 'package:quiz_app/widgets/summary_items.dart';
 
 class QueationSummary extends StatelessWidget {

@@ -47,7 +47,7 @@ class ResultScreen extends StatelessWidget {
               style: GoogleFonts.lato(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 218, 200, 240),
+                color: const Color.fromARGB(255, 218, 200, 240),
               ),
               textAlign: TextAlign.center,
             ),

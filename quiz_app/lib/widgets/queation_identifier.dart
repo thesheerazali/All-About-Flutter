@@ -16,7 +16,7 @@ class QueationIdentifier extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         color: isCorrect
             ? const Color.fromARGB(255, 153, 196, 228)
-            : Color.fromARGB(255, 236, 132, 167),
+            : const Color.fromARGB(255, 236, 132, 167),
       ),
       child: Center(
         child: Text(

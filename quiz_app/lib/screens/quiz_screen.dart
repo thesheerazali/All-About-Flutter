@@ -39,7 +39,7 @@ class _QuizScreenState extends State<QuizScreen> {
             Text(
               currentQueations.text,
               style: GoogleFonts.lato(
-                  color: Color.fromARGB(255, 184, 132, 243),
+                  color: const Color.fromARGB(255, 184, 132, 243),
                   fontSize: 24,
                   fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
