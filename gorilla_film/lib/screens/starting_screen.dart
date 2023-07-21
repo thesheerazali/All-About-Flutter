@@ -1,5 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../Widgets/login_signup_container.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
@@ -11,6 +16,7 @@ class StartScreen extends StatelessWidget {
         children: [
           SizedBox(
             height: double.infinity,
+            width: double.infinity,
             child: Image.asset(
               "assets/images/Welcome/background@3x.png",
               fit: BoxFit.fill,
@@ -23,15 +29,15 @@ class StartScreen extends StatelessWidget {
                 Image.asset(
                   "assets/images/blackLogo.png",
                   color: Colors.white,
-                  height: 150,
+                  height: 150.h,
                 ),
-                const SizedBox(
-                  height: 50,
+                SizedBox(
+                  height: 30.h,
                 ),
                 Text(
                   "Welcome to the Gorilla Community  (GOCO)",
                   style: GoogleFonts.lato(
-                    fontSize: 24,
+                    fontSize: 24.sp,
                     color: Colors.white,
                   ),
                   textAlign: TextAlign.center,
@@ -39,6 +45,7 @@ class StartScreen extends StatelessWidget {
               ],
             ),
           ),
+          const LoginSignUpContainer(),
         ],
       ),
     );
