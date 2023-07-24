@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'getexamples/example_one_using_model_class.dart';
+import 'getexamples/complex_api_data.dart';
 import 'getexamples/example_one_without_model_class.dart';
 
 void main() {
-  runApp( const ApiWork());
+  runApp(const ApiWork());
 }
 
 class ApiWork extends StatelessWidget {
@@ -12,10 +12,9 @@ class ApiWork extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-
-      home: ExampleOneWithoutModelClass(),
+      home: ComplexApiData(),
     );
   }
 }
