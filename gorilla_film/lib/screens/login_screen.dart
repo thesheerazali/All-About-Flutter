@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 30.h,
+              height: 50.h,
             ),
             Text(
               "Login To Your Account",
@@ -73,16 +73,16 @@ class LoginScreen extends StatelessWidget {
                   child: Text(
                     "Forgot Your Password?",
                     style: GoogleFonts.lato(
-                        fontSize: 15.sp,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        wordSpacing: 2),
+                      fontSize: 15.sp,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   )),
             ),
             InkWell(
               onTap: () {},
               child: Container(
-                height: 55.h,
+                height: 50.h,
                 width: double.infinity.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
@@ -101,7 +101,7 @@ class LoginScreen extends StatelessWidget {
               height: 10.h,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text("Not yet a member?",
                     style: GoogleFonts.lato(
@@ -129,7 +129,7 @@ class LoginScreen extends StatelessWidget {
             InkWell(
               onTap: () {},
               child: Container(
-                height: 55.h,
+                height: 50.h,
                 width: double.infinity.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
@@ -151,7 +151,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 50.h,
+              height: 70.h,
             ),
             const GoogleFacebookSignUpButton(),
           ]),

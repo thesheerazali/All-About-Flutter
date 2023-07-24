@@ -14,15 +14,11 @@ class GoogleFacebookSignUpButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         InkWell(
-          onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const LoginScreen(),
-              )),
+          onTap: () {},
           child: Container(
             height: 50.h,
             width: 155.w,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/icons/google.png"))),
           ),
@@ -31,11 +27,7 @@ class GoogleFacebookSignUpButton extends StatelessWidget {
           width: 10.w,
         ),
         InkWell(
-          onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const SignUpScreen(),
-              )),
+          onTap: () {},
           child: Container(
             height: 50.h,
             width: 155.w,
