@@ -16,7 +16,7 @@ class _ComplexApiDataState extends State<ComplexApiData> {
   Future<ProductModel> getProductsApi() async {
     //create your own api
     final response = await http.get(
-        Uri.parse('https://mocki.io/v1/64fa575d-7b55-4ef1-afb3-eea35b274123'));
+        Uri.parse('https://mocki.io/v1/7055baba-4065-4449-b998-59c5c7cce951'));
     var data = jsonDecode(response.body.toString());
     if (response.statusCode == 200) {
       return ProductModel.fromJson(data);
