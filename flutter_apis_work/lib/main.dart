@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apis_work/postexamples/login_example.dart';
 import 'package:flutter_apis_work/postexamples/signup_example.dart';
+import 'package:flutter_apis_work/postexamples/upload_image_on_server.dart';
 
 //import 'getexamples/complex_api_data.dart';
 //import 'getexamples/example_one_without_model_class.dart';
@@ -16,7 +17,7 @@ class ApiWork extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginExample(),
+      home: ImageUploadOnServer(),
     );
   }
 }

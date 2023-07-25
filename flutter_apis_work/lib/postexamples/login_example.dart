@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
+import 'package:http/http.dart' ;
 
 class LoginExample extends StatefulWidget {
   LoginExample({super.key});
@@ -100,12 +100,14 @@ class _LoginExampleState extends State<LoginExample> {
                           Icons.done,
                           color: Colors.white,
                         )
-                      : const Text(
-                          "Login",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                      : const Center(
+                          child: Text(
+                            "Login",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
                           ),
                         ),
                 ),
