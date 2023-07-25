@@ -1,25 +1,41 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
-class SignUpExamp extends StatelessWidget {
-  SignUpExamp({super.key});
+class LoginExample extends StatefulWidget {
+  LoginExample({super.key});
 
+  @override
+  State<LoginExample> createState() => _LoginExampleState();
+}
+
+class _LoginExampleState extends State<LoginExample> {
   final TextEditingController emailController = TextEditingController();
+
   final TextEditingController passwordController = TextEditingController();
+
+  var isLogin = "";
+  var changeButton = false;
 
   void login(String email, password) async {
     try {
       Response responce =
-          await post(Uri.parse("https://reqres.in/api/register"), body: {
+          await post(Uri.parse("https://reqres.in/api/login"), body: {
         'email': email,
         'password': password,
       });
 
       if (responce.statusCode == 200) {
-        print("account Created Succesfully");
+        setState(() {
+          changeButton = true;
+          isLogin = "LogIn Succesfull";
+        });
+
+        print("Login Succesfully");
       } else {
+        setState(() {
+          changeButton = false;
+        });
+
         print("Failed");
       }
     } catch (e) {
@@ -32,7 +48,7 @@ class SignUpExamp extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Sign Up"),
+          title: Text("Login"),
           centerTitle: true,
           backgroundColor: Colors.deepPurple,
         ),
@@ -49,7 +65,8 @@ class SignUpExamp extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-               onTapOutside: (event) =>  FocusManager.instance.primaryFocus?.unfocus() ,
+                onTapOutside: (event) =>
+                    FocusManager.instance.primaryFocus?.unfocus(),
               ),
               const SizedBox(
                 height: 20,
@@ -62,7 +79,6 @@ class SignUpExamp extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-               
               ),
               const SizedBox(
                 height: 20,
@@ -73,23 +89,49 @@ class SignUpExamp extends StatelessWidget {
                       passwordController.text.toString());
                 },
                 child: Container(
-                  width: double.infinity,
+                  width: changeButton ? 50 : double.infinity,
                   height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.deepPurple,
                   ),
-                  child: const Center(
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(
+                  child: changeButton
+                      ? const Icon(
+                          Icons.done,
                           color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                        )
+                      : const Text(
+                          "Login",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
                 ),
               ),
+              SizedBox(
+                height: 20,
+              ),
+              isLogin == ""
+                  ? SizedBox()
+                  : Container(
+                      width: double.infinity,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.deepPurple,
+                      ),
+                      child: Center(
+                        child: Text(
+                          isLogin,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
             ],
           ),
         ),
