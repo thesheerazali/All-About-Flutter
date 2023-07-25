@@ -14,6 +14,7 @@ class ImageUploadOnServer extends StatefulWidget {
 
 class _ImageUploadOnServerState extends State<ImageUploadOnServer> {
   File? image;
+
   final imagepicker = ImagePicker();
   bool progressIndecator = false;
 
@@ -30,42 +31,12 @@ class _ImageUploadOnServerState extends State<ImageUploadOnServer> {
   }
 
   Future<void> uploadImage() async {
-    setState(() {
-      progressIndecator = true;
-    });
-
-    var stream = http.ByteStream(image!.openRead());
-    stream.cast();
-
-    var length = await image!.length();
-
-    var uri = Uri.parse("https://fakestoreapi.com/products");
-
-    var req = http.MultipartRequest('POST', uri);
-
-    req.fields['title'] = "Static ttitle";
-
-    var multiport = http.MultipartFile(
-      'image',
-      stream,
-      length,
-    );
-
-    req.files.add(multiport);
-
-    var responce = await req.send();
-
-    if (responce.statusCode == 200) {
-      setState(() {
-        progressIndecator = false;
-      });
-
+    if (image == null) {
       showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text("Successfull"),
-            content: Text("Yayy! Image Uploaded successfully"),
+            title: Text("Select Image First"),
             actions: [
               Center(
                 child: ElevatedButton(
@@ -79,14 +50,85 @@ class _ImageUploadOnServerState extends State<ImageUploadOnServer> {
           );
         },
       );
-
-      print("Uploaded Successfullt");
     } else {
       setState(() {
-        progressIndecator = false;
+        progressIndecator = true;
       });
 
-      print("failed");
+      var stream = http.ByteStream(image!.openRead());
+      stream.cast();
+
+      var length = await image!.length();
+
+      var uri = Uri.parse("https://fakestoreapi.com/products");
+
+      var req = http.MultipartRequest('POST', uri);
+
+      req.fields['title'] = "Static ttitle";
+
+      var multiport = http.MultipartFile(
+        'image',
+        stream,
+        length,
+      );
+
+      req.files.add(multiport);
+
+      var responce = await req.send();
+
+      if (responce.statusCode == 200) {
+        setState(() {
+          progressIndecator = false;
+        });
+
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text("Successfull"),
+              content: Text("Yayy! Image Uploaded successfully"),
+              actions: [
+                Center(
+                  child: ElevatedButton(
+                    child: new Text("OK"),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ),
+              ],
+            );
+          },
+        );
+
+        print("Uploaded Successfull");
+      } else {
+        setState(() {
+          progressIndecator = false;
+        });
+
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text("Unsuccessfull"),
+              content: Text("Oops Image Uploaded Unsuccessfull"),
+              actions: [
+                Center(
+                  child: ElevatedButton(
+                    child: new Text("OK"),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ),
+              ],
+            );
+          },
+        );
+
+        print("failed");
+      }
     }
   }
 
