@@ -30,7 +30,7 @@ class _ComplexApiDataState extends State<ComplexApiData> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Complex Data '),
+        title: Text('Get Data From Api '),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -41,7 +41,8 @@ class _ComplexApiDataState extends State<ComplexApiData> {
                 future: getProductsApi(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
-                    return const Center(child: const CircularProgressIndicator());
+                    return const Center(
+                        child: const CircularProgressIndicator());
                   } else {
                     return ListView.builder(
                         itemCount: snapshot.data!.data.length,
@@ -51,8 +52,7 @@ class _ComplexApiDataState extends State<ComplexApiData> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               ListTile(
-                                title: Text(snapshot
-                                    .data!.data[index].shop.name
+                                title: Text(snapshot.data!.data[index].shop.name
                                     .toString()),
                                 subtitle: Text(snapshot
                                     .data!.data[index].shop.shopemail
@@ -98,10 +98,10 @@ class _ComplexApiDataState extends State<ComplexApiData> {
                                       );
                                     }),
                               ),
-                              Icon(snapshot.data!.data[index].inWishlist ==
-                                      false
-                                  ? Icons.favorite
-                                  : Icons.favorite_outline)
+                              Icon(
+                                  snapshot.data!.data[index].inWishlist == false
+                                      ? Icons.favorite
+                                      : Icons.favorite_outline)
                             ],
                           );
                         });
